@@ -1,7 +1,6 @@
 .container {
-  width: 837px;
-  height: 915px;
-  border: solid 1px #ddd;
+  width: 100%;
+  height: calc(100vh);
   position: relative;
 }
 

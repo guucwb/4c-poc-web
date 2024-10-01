@@ -1,8 +1,10 @@
 import { ArtificialIntelligenceIcon } from '@twilio-paste/icons/esm/ArtificialIntelligenceIcon';
 import { SendIcon } from '@twilio-paste/icons/esm/SendIcon';
-import { ProductMessagingIcon } from '@twilio-paste/icons/esm/ProductMessagingIcon';
-import { ProductSendGridIcon } from '@twilio-paste/icons/esm/ProductSendGridIcon';
-import { ProductCLIIcon } from '@twilio-paste/icons/esm/ProductCLIIcon';
+import { LockIcon } from '@twilio-paste/icons/esm/LockIcon';
+import { PaymentIcon } from '@twilio-paste/icons/esm/PaymentIcon';
+import { CalendarIcon } from '@twilio-paste/icons/esm/CalendarIcon';
+import { TaskIcon } from '@twilio-paste/icons/esm/TaskIcon';
+import { CreditCardIcon } from '@twilio-paste/icons/esm/CreditCardIcon';
 import { ChatComposerContainer, ChatComposer, ChatComposerActionGroup } from '@twilio-paste/core/chat-composer';
 import { Button, ButtonGroup } from '@twilio-paste/core';
 import { TabPanel } from '@twilio-paste/core/tabs';
@@ -10,6 +12,7 @@ import { Heading } from '@twilio-paste/core/heading';
 import { Box } from '@twilio-paste/core/box';
 
 function KnowledgeBaseTabPanel() {
+
     return (
         <>
             <TabPanel id='baseConhecimento' borderLeft="solid 1px #ddd" borderRight="solid 1px #ddd" borderBottom="solid 1px #ddd" padding="space60">
@@ -20,8 +23,8 @@ function KnowledgeBaseTabPanel() {
                     <Box width="100%">
                     <ChatComposerContainer variant="contained">
                     <ChatComposer
-                        ariaLabel="input for sending a message to ai"
-                        placeholder="Chat text"
+                        ariaLabel="Caixa de texto para dúvidas"
+                        placeholder="Digite aqui a sua dúvida"
                         config={{
                         namespace: "customer-chat",
                         onError: (e) => {
@@ -31,21 +34,20 @@ function KnowledgeBaseTabPanel() {
                     />
                     <ChatComposerActionGroup>
                         <Button variant="primary_icon" size="reset">
-                        <SendIcon decorative={false} title="send chat message to ai" />
+                        <SendIcon decorative={false} title="Enviar mensagem" />
                         </Button>
                     </ChatComposerActionGroup>
                     </ChatComposerContainer>
                     </Box>
                 </Box>
                 <ButtonGroup justifyContent="center">
-                    <Button variant="secondary" size="rounded_small"><ProductMessagingIcon decorative />How do I set up SMS?</Button>
-                    <Button variant="secondary" size="rounded_small"><ProductSendGridIcon decorative />I’m unable to login to SendGrid due to 2FA</Button>
-                    <Button variant="secondary" size="rounded_small"><ProductSendGridIcon decorative />How can I get in touch with SendGrid support?</Button>
-                    <Button variant="secondary" size="rounded_small"><ProductCLIIcon decorative />How to uninstall Twilio CLI?</Button>
-                    <Button variant="secondary" size="rounded_small"><ProductSendGridIcon decorative />How do I report spam?</Button>
+                    <Button variant="secondary" size="rounded_small"><CreditCardIcon decorative />Quais são os critérios para definir as condições de pagamento?</Button>
+                    <Button variant="secondary" size="rounded_small"><LockIcon decorative />Como lidar com vítimas de fraude?</Button>
+                    <Button variant="secondary" size="rounded_small"><PaymentIcon decorative />Como lidar com quem não tem condições de pagar?</Button>
+                    <Button variant="secondary" size="rounded_small"><CalendarIcon decorative />Como tratar prazos muito longos?</Button>
+                    <Button variant="secondary" size="rounded_small"><TaskIcon decorative />Como gerar relatórios sobre as negociações?</Button>
                 </ButtonGroup>
                 </Box>
-
             </TabPanel>
         </>
     );
