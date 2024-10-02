@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { isEmpty } from 'lodash';
+import axios from 'axios';  
 
 import { useUID } from '@twilio-paste/core/dist/uid-library';
 import { Theme } from '@twilio-paste/core/theme';
@@ -13,42 +14,38 @@ import KnowledgeBaseTabPanel from './components/KnowledgeBaseTabPanel';
 import './App.css';
 
 function App() {
-  const [task, setTask] = useState({});
+  const [data, setData] = useState({});
+  const [noData, setNoData] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
   const selectedId = useUID();
-
-  const fakeTask = { 
-    attributes: {
-      debt: {
-        creditor: "Banco Itaú S/A",
-        debtStatus: "Negativada",
-        debtType: "Cartão de Crédito",
-        originalDate: "25/03/2024",
-        originalValue: "R$ 3.542,77",
-        currentValue: "R$ 8.253,56"
-      },
-      registration: {
-        fullName: "Gustavo Azevedo Cavalcanti",
-        cpf: "197.XXX.XXX-80",
-        rg: "240XXXX8-1",
-        dob: "04/07/1975",
-        cityState: "Guarulhos / SP",
-        phoneNumber: "(11) 99280-8313",
-        address: "Rua Áustria, 168 - Parque das Nações"
-      }      
-    }
-  };
 
   useEffect(() => {
     const params = Object.fromEntries(new URLSearchParams(window.location.search));
-    if (params.task) {
-      setTask(fakeTask);
-      console.log('Task is found=');
-      console.log(task);
+    
+    if (params.phoneNumber && params.phoneNumber !== "") {
+      setPhoneNumber(params.phoneNumber);
     } else {
-      console.log('Task is not found');
+      setNoData(true);
     }
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    if (phoneNumber && phoneNumber !== "") {
+      let config = {
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: 'https://paschoalotto-7229.twil.io/getData?key=2XT8P3Y7VL&phoneNumber=' + phoneNumber,
+        headers: { 
+          'Content-Type': 'application/json', 
+        }
+      };
+
+      axios.request(config)
+        .then((response) => setData(response.data))
+        .catch((_err) => { console.log('phone number not found') });
+    }
+  }, [phoneNumber]);
 
   document.body.style.height = "100vh";
   document.body.style.overflowY = 'visible';
@@ -57,7 +54,7 @@ function App() {
     <>
       <Theme.Provider theme="twilio">
         <Box padding="space60" className="container">
-          { !isEmpty(task) ?
+          { !noData && !isEmpty(data) &&
             <>
               <Header />
               <Tabs selectedId={selectedId} baseId="horizontal-tabs-example">
@@ -67,13 +64,18 @@ function App() {
                     <Tab>Base de Conhecimento</Tab>
                 </TabList>
                 <TabPanels>
-                    <RegistrationDetailsTabPanel task={task} />
-                    <NegotiationTabPanel task={task} />
-                    <KnowledgeBaseTabPanel task={task} />
+                    <RegistrationDetailsTabPanel data={data} />
+                    <NegotiationTabPanel data={data} />
+                    <KnowledgeBaseTabPanel data={data} />
                 </TabPanels>
             </Tabs>
             </>
-            :
+          }
+          {
+            !noData && isEmpty(data) &&
+            <div>Não foram encontrados registros para este número de telefone.</div>
+          }
+          { noData && 
             <img className="main-logo" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReBkJcmAgPCYXjZWwzk-EGE_wKWO-MIIKEKw&s' alt='logo' />
           }
         </Box>

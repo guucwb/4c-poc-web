@@ -8,7 +8,7 @@ import { Stack } from '@twilio-paste/core/stack';
 import { useUID } from "@twilio-paste/core/uid-library";
 
 function RegistrationDetailsTabPanel (props) {
-    console.log(props.task);
+    
     return (    
         <>
             <TabPanel borderLeft="solid 1px #ddd" borderRight="solid 1px #ddd" borderBottom="solid 1px #ddd" padding="space60">
@@ -17,8 +17,8 @@ function RegistrationDetailsTabPanel (props) {
                         <PageHeaderDetails>
                             <PageHeaderHeading>
                                 <Stack orientation="horizontal">
-                                    <Avatar size="sizeIcon100" name={props.task?.attributes?.registration?.fullName} />
-                                    <Box paddingLeft="space40">{ props.task?.attributes?.registration?.fullName }</Box>
+                                    <Avatar size="sizeIcon100" name={props.data?.data?.registration?.fullName || "Unknown User"} />
+                                    <Box paddingLeft="space40">{ props.data?.data?.registration?.fullName }</Box>
                                 </Stack>
                             </PageHeaderHeading>
                         </PageHeaderDetails>
@@ -42,15 +42,15 @@ function RegistrationDetailsTabPanel (props) {
                                 <DescriptionList>
                                 <DescriptionListSet>
                                     <DescriptionListTerm>Credor</DescriptionListTerm>
-                                    <DescriptionListDetails>{ props.task?.attributes?.debt?.creditor}</DescriptionListDetails>
+                                    <DescriptionListDetails>{ props.data?.data?.debt?.creditor}</DescriptionListDetails>
                                 </DescriptionListSet>
                                 <DescriptionListSet>
                                     <DescriptionListTerm>Tipo de Dívida</DescriptionListTerm>
-                                    <DescriptionListDetails>{props.task?.attributes?.debt?.debtType }</DescriptionListDetails>
+                                    <DescriptionListDetails>{props.data?.data?.debt?.debtType }</DescriptionListDetails>
                                 </DescriptionListSet>
                                 <DescriptionListSet>
                                     <DescriptionListTerm>Valor Original</DescriptionListTerm>
-                                    <DescriptionListDetails>{props.task?.attributes?.debt?.originalValue }</DescriptionListDetails>
+                                    <DescriptionListDetails>{props.data?.data?.debt?.originalValue }</DescriptionListDetails>
                                 </DescriptionListSet>
                                 </DescriptionList>
                             </Box>
@@ -58,15 +58,15 @@ function RegistrationDetailsTabPanel (props) {
                                 <DescriptionList>
                                 <DescriptionListSet>
                                     <DescriptionListTerm>Status da Dívida</DescriptionListTerm>
-                                    <DescriptionListDetails>{props.task?.attributes?.debt?.debtStatus }</DescriptionListDetails>
+                                    <DescriptionListDetails>{props.data?.data?.debt?.debtStatus }</DescriptionListDetails>
                                 </DescriptionListSet>
                                 <DescriptionListSet>
                                     <DescriptionListTerm>Data de Vencimento Original</DescriptionListTerm>
-                                    <DescriptionListDetails>{props.task?.attributes?.debt?.originalDate}</DescriptionListDetails>
+                                    <DescriptionListDetails>{props.data?.data?.debt?.originalDate}</DescriptionListDetails>
                                 </DescriptionListSet>
                                 <DescriptionListSet>
                                     <DescriptionListTerm>Valor Atual</DescriptionListTerm>
-                                    <DescriptionListDetails>{props.task?.attributes?.debt?.currentValue}</DescriptionListDetails>
+                                    <DescriptionListDetails>{props.data?.data?.debt?.currentValue}</DescriptionListDetails>
                                 </DescriptionListSet>
                                 </DescriptionList>
                             </Box>
@@ -81,15 +81,15 @@ function RegistrationDetailsTabPanel (props) {
                                 <DescriptionList>
                                 <DescriptionListSet>
                                     <DescriptionListTerm>CPF</DescriptionListTerm>
-                                    <DescriptionListDetails>{props.task?.attributes?.registration?.cpf}</DescriptionListDetails>
+                                    <DescriptionListDetails>{props.data?.data?.registration?.cpf}</DescriptionListDetails>
                                 </DescriptionListSet>
                                 <DescriptionListSet>
                                     <DescriptionListTerm>Data de Nascimento</DescriptionListTerm>
-                                    <DescriptionListDetails>{props.task?.attributes?.registration?.dob}</DescriptionListDetails>
+                                    <DescriptionListDetails>{props.data?.data?.registration?.dob}</DescriptionListDetails>
                                 </DescriptionListSet>
                                 <DescriptionListSet>
                                     <DescriptionListTerm>Cidade / Estado</DescriptionListTerm>
-                                    <DescriptionListDetails>{props.task?.attributes?.registration?.cityState}</DescriptionListDetails>
+                                    <DescriptionListDetails>{props.data?.data?.registration?.cityState}</DescriptionListDetails>
                                 </DescriptionListSet>
                                 </DescriptionList>
                             </Box>
@@ -97,15 +97,15 @@ function RegistrationDetailsTabPanel (props) {
                                 <DescriptionList>
                                 <DescriptionListSet>
                                     <DescriptionListTerm>RG</DescriptionListTerm>
-                                    <DescriptionListDetails>{props.task?.attributes?.registration?.rg}</DescriptionListDetails>
+                                    <DescriptionListDetails>{props.data?.data?.registration?.rg}</DescriptionListDetails>
                                 </DescriptionListSet>
                                 <DescriptionListSet>
                                     <DescriptionListTerm>Endereço / Complemento</DescriptionListTerm>
-                                    <DescriptionListDetails>{props.task?.attributes?.registration?.address}</DescriptionListDetails>
+                                    <DescriptionListDetails>{props.data?.data?.registration?.address}</DescriptionListDetails>
                                 </DescriptionListSet>
                                 <DescriptionListSet>
                                     <DescriptionListTerm>Telefone</DescriptionListTerm>
-                                    <DescriptionListDetails>{props.task?.attributes?.registration?.phoneNumber}</DescriptionListDetails>
+                                    <DescriptionListDetails>{props.data?.data?.registration?.phoneNumber}</DescriptionListDetails>
                                 </DescriptionListSet>
                                 </DescriptionList>
                             </Box>
