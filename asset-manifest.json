@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/paschoalotto-poc-web/static/css/main.b210ed64.css",
-    "main.js": "/paschoalotto-poc-web/static/js/main.59187860.js",
+    "main.js": "/paschoalotto-poc-web/static/js/main.df34ff6b.js",
     "static/js/453.866f3678.chunk.js": "/paschoalotto-poc-web/static/js/453.866f3678.chunk.js",
     "index.html": "/paschoalotto-poc-web/index.html",
     "main.b210ed64.css.map": "/paschoalotto-poc-web/static/css/main.b210ed64.css.map",
-    "main.59187860.js.map": "/paschoalotto-poc-web/static/js/main.59187860.js.map",
+    "main.df34ff6b.js.map": "/paschoalotto-poc-web/static/js/main.df34ff6b.js.map",
     "453.866f3678.chunk.js.map": "/paschoalotto-poc-web/static/js/453.866f3678.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b210ed64.css",
-    "static/js/main.59187860.js"
+    "static/js/main.df34ff6b.js"
   ]
 }
