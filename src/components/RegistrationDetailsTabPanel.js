@@ -133,21 +133,22 @@ function RegistrationDetailsTabPanel (props) {
                             </THead>
                             <TBody>
                                 <Tr>
-                                    <Td>28/09/2024 10:32</Td>
-                                    <Td><Badge as="span" variant="success">WhatsApp</Badge></Td>
-                                    <Td>Content</Td>
+                                    <Td>28/09/2024</Td>
+                                    <Td><Badge as="span" variant="error">Pendente</Badge></Td>
+                                    <Td>-</Td>
                                     <Td><Button variant='secondary'>Ver Detalhes...</Button></Td>
                                 </Tr>
                                 <Tr>
-                                    <Td>Content</Td>
-                                    <Td><Badge as="span" variant="error">RCS</Badge></Td>
-                                    <Td>Content</Td>
+                                    <Td>28/08/2024</Td>
+                                    <Td><Badge as="span" variant="success">Pago</Badge></Td>
+                                    <Td>28/08/2024</Td>
                                     <Td><Button variant='secondary'>Ver Detalhes...</Button></Td>
                                 </Tr>
+                                
                                 <Tr>
-                                    <Td>Content</Td>
-                                    <Td><Badge as="span" variant="neutral">Voz</Badge></Td>
-                                    <Td>Content</Td>
+                                    <Td>28/07/2024</Td>
+                                    <Td><Badge as="span" variant="success">Pago</Badge></Td>
+                                    <Td>27/07/2024</Td>
                                     <Td><Button variant='secondary'>Ver Detalhes...</Button></Td>
                                 </Tr>
                             </TBody>
@@ -169,27 +170,23 @@ function RegistrationDetailsTabPanel (props) {
                                 <Tr>
                                     <Th>Data / Hora</Th>
                                     <Th>Canal</Th>
-                                    <Th>Resumo</Th>
                                     <Th></Th>
                                 </Tr>
                             </THead>
                             <TBody>
                                 <Tr>
-                                    <Td>28/09/2024 10:32</Td>
+                                    <Td>30/09/2024 10:32</Td>
                                     <Td><Badge as="span" variant="success">WhatsApp</Badge></Td>
-                                    <Td>Content</Td>
                                     <Td><Button variant='secondary'>Ver Detalhes...</Button></Td>
                                 </Tr>
                                 <Tr>
-                                    <Td>Content</Td>
+                                    <Td>27/09/2024 14:22</Td>
                                     <Td><Badge as="span" variant="error">RCS</Badge></Td>
-                                    <Td>Content</Td>
                                     <Td><Button variant='secondary'>Ver Detalhes...</Button></Td>
                                 </Tr>
                                 <Tr>
-                                    <Td>Content</Td>
-                                    <Td><Badge as="span" variant="neutral">Voz</Badge></Td>
-                                    <Td>Content</Td>
+                                    <Td>27/09/2024 15:29</Td>
+                                    <Td><Badge as="span" variant="neutral">Voz</Badge></Td> 
                                     <Td><Button variant='secondary'>Ver Detalhes...</Button></Td>
                                 </Tr>
                             </TBody>
