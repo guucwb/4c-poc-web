@@ -11,6 +11,7 @@ import Header from './components/Header';
 import RegistrationDetailsTabPanel from './components/RegistrationDetailsTabPanel';
 import NegotiationTabPanel from './components/NegotiationTabPanel';
 import KnowledgeBaseTabPanel from './components/KnowledgeBaseTabPanel';
+import NotFound from './components/NotFound';
 import './App.css';
 
 function App() {
@@ -73,7 +74,10 @@ function App() {
           }
           {
             !noData && isEmpty(data) &&
-            <div>Não foram encontrados registros para este número de telefone.</div>
+            <>
+              <Header />
+              <NotFound />
+            </>
           }
           { noData && 
             <img className="main-logo" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReBkJcmAgPCYXjZWwzk-EGE_wKWO-MIIKEKw&s' alt='logo' />
