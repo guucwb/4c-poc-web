@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { isEmpty } from 'lodash';
-//import axios from 'axios';  
+import axios from 'axios';  
 
 import { useUID } from '@twilio-paste/core/dist/uid-library';
 import { Theme } from '@twilio-paste/core/theme';
