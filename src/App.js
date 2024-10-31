@@ -25,8 +25,12 @@ function App() {
     
     if (params.phoneNumber && params.phoneNumber !== "") {
       let tempPhone = params.phoneNumber;
-      tempPhone = tempPhone.replace('whatsapp:+', '');
-      tempPhone = tempPhone.replace('whatsapp%3A%2B', '');
+      tempPhone = tempPhone.replace(':', '');
+      tempPhone = tempPhone.replace(' ', '');
+      tempPhone = tempPhone.replace('+', '');
+      tempPhone = tempPhone.replace('whatsapp', '');
+      tempPhone = tempPhone.replace('%3A', '');
+      tempPhone = tempPhone.replace('%2B', '');
       setPhoneNumber(tempPhone);
     } else {
       setNoData(true);
