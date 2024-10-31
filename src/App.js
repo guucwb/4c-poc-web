@@ -24,7 +24,10 @@ function App() {
     const params = Object.fromEntries(new URLSearchParams(window.location.search));
     
     if (params.phoneNumber && params.phoneNumber !== "") {
-      setPhoneNumber(params.phoneNumber);
+      let tempPhone = params.phoneNumber;
+      tempPhone = tempPhone.replace('whatsapp:+', '');
+      tempPhone = tempPhone.replace('whatsapp%3A%2B', '');
+      setPhoneNumber(tempPhone);
     } else {
       setNoData(true);
     }
