@@ -87,7 +87,8 @@ function App() {
             </>
           }
           { noData && 
-            <img className="main-logo" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDJa7oBBWKZgiLDr2fBLN2Be5CMLTLCUnRag&s' alt='logo' />
+            //<img className="main-logo" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDJa7oBBWKZgiLDr2fBLN2Be5CMLTLCUnRag&s' alt='logo' />
+            <img className="main-logo" src='https://dpms.immunizesystem.com/uploads/company/logos/b5f85bcff262922bdddd67c1df5c2501/logo-4608.png' alt='logo' />
           }
         </Box>
       </Theme.Provider>
