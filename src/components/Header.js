@@ -4,8 +4,8 @@ function Header() {
     return (
         <>
             <Box paddingBottom="space60" display="flex">
-                <a href="https://www.amarantehoteis.com.br/" style={{alignItems: 'center', display: 'flex', marginLeft: 'auto'}}>
-                    <img src="https://dpms.immunizesystem.com/uploads/company/logos/b5f85bcff262922bdddd67c1df5c2501/logo-4608.png" alt="Grupo Amarante" style={{ height: '75px'}} /> 
+                <a href="https://intervalor.com.br/" style={{alignItems: 'center', display: 'flex', marginLeft: 'auto'}}>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6yOSVvWtHRibCgy_z3bmFuE1etAjTaSdd6g&s" alt="Intervalor" style={{ height: '75px'}} /> 
                 </a>
             </Box>
         </>
