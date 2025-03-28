@@ -88,7 +88,7 @@ function App() {
           }
           { noData && 
             //<img className="main-logo" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDJa7oBBWKZgiLDr2fBLN2Be5CMLTLCUnRag&s' alt='logo' />
-            <img className="main-logo" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6yOSVvWtHRibCgy_z3bmFuE1etAjTaSdd6g&s' alt='logo' />
+            <img className="main-logo" src='https://static.wixstatic.com/media/2931e1_d77866e0ed1847afb9cbe19df3bcb92e~mv2.png/v1/fill/w_560,h_322,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Bradesco.png' alt='logo' />
           }
         </Box>
       </Theme.Provider>
